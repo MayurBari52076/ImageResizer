@@ -22,9 +22,11 @@ const ImageResizer = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/resize', formData, {
-        responseType: 'blob',
-      });
+      const response = await axios.post(
+        'https://image-resizer-api-4z3q.onrender.com/resize',
+        formData,
+        { responseType: 'blob' }
+      );``      
       const blob = new Blob([response.data]);
       const imageUrl = URL.createObjectURL(blob);
       setProcessedImage(imageUrl);
